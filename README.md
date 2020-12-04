@@ -1,1 +1,1 @@
-# Programowanie Serwisów Internetowych
+# Model bazy danych
