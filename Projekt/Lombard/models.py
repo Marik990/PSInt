@@ -15,6 +15,9 @@ class Klienci(models.Model):
     login = models.CharField(max_length=45, null=False)
     haslo = models.CharField(max_length=45, null=False)
 
+    def __str__(self):
+        return self.login
+
     class Meta:
         db_table = "klienci"
 
@@ -26,6 +29,9 @@ class Przedmioty(models.Model):
     opis = models.TextField()
     widoczny = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.nazwa
+
     class Meta:
         db_table = "przedmioty"
 
@@ -36,6 +42,9 @@ class Zamowienia(models.Model):
     idPrzedmiotu = models.ForeignKey(Przedmioty, on_delete=models.CASCADE, db_column="idPrzedmiotu")
     dataZamowienia = models.DateTimeField(default=date.today)
     status = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.idZamowienia
 
     class Meta:
         db_table = "zamowienia"
