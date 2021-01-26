@@ -16,6 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from Projekt.Lombard import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('lombard/', views.lobardOverview, name="lombard-overview"),
+    path('lombard/przedmioty-list/', views.przedmiotyList, name="przedmioty-list"),
+    path('lombard/przedmioty-detail/<str:pk>/', views.przedmiotyDetail, name="przedmioty-detail"),
+    path('lombard/przedmioty-create/', views.przedmiotyCreate, name="przedmioty-create"),
+    path('lombard/przedmioty-update/<str:pk>/', views.przedmiotyUpdate, name="przedmioty-update"),
+    path('lombard/przedmioty-delete/<str:pk>/', views.przedmiotyDelete, name="przedmioty-delete"),
 ]
