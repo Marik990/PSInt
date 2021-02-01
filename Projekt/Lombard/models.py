@@ -4,6 +4,7 @@ from datetime import date
 
 # Create your models here.
 
+
 class Klienci(models.Model):
     idKlienta = models.AutoField(primary_key=True)
     imie = models.CharField(max_length=45)
@@ -24,8 +25,8 @@ class Klienci(models.Model):
 class Przedmioty(models.Model):
     idPrzedmiotu = models.AutoField(primary_key=True)
     nazwa = models.CharField(max_length=255, null=False)
-    cena = models.DecimalField(max_digits=11, decimal_places=2, null=False)
-    opis = models.TextField()
+    cena = models.DecimalField(max_digits=11, decimal_places=2, default=0, null=False)
+    opis = models.TextField(default="")
     widoczny = models.BooleanField(default=True)
 
     def __str__(self):

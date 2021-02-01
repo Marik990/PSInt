@@ -22,7 +22,7 @@ def lobardOverview(request):
 
 @api_view(['GET'])
 def przedmiotyList(request):
-    przedmioty = Przedmioty.objects.all()
+    przedmioty = Przedmioty.objects.all().order_by('-idPrzedmiotu')
     serializer = PrzedmiotySerializer(przedmioty, many=True)
     return Response(serializer.data)
 
